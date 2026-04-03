@@ -1,0 +1,220 @@
+{
+  "topics": [
+    {
+      "id": "tech",
+      "name": "技术",
+      "icon": "💻",
+      "description": "技术学习与实践，涵盖前端、后端、架构等多个领域",
+      "categories": [
+        {
+          "id": "frontend",
+          "name": "前端",
+          "icon": "🎨",
+          "children": [
+            {
+              "id": "vite",
+              "name": "Vite",
+              "icon": "⚡",
+              "posts": ["vite-guide", "vite-plugin-dev"]
+            },
+            {
+              "id": "react",
+              "name": "React",
+              "icon": "⚛️",
+              "posts": ["react-hooks-advanced"]
+            },
+            {
+              "id": "css",
+              "name": "CSS",
+              "icon": "🎭",
+              "posts": ["css-grid-layout"]
+            }
+          ]
+        },
+        {
+          "id": "backend",
+          "name": "后端",
+          "icon": "⚙️",
+          "children": [
+            {
+              "id": "node",
+              "name": "Node.js",
+              "icon": "🟢",
+              "posts": ["node-api-design"]
+            },
+            {
+              "id": "python",
+              "name": "Python",
+              "icon": "🐍",
+              "posts": ["fastapi-tutorial"]
+            }
+          ]
+        },
+        {
+          "id": "devops",
+          "name": "DevOps",
+          "icon": "🚀",
+          "children": [
+            {
+              "id": "docker",
+              "name": "Docker",
+              "icon": "🐳",
+              "posts": ["docker-best-practices"]
+            },
+            {
+              "id": "k8s",
+              "name": "Kubernetes",
+              "icon": "☸️",
+              "posts": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai",
+      "name": "AI",
+      "icon": "🤖",
+      "description": "人工智能、机器学习、LLM应用与实践",
+      "categories": [
+        {
+          "id": "llm",
+          "name": "大语言模型",
+          "icon": "🧠",
+          "children": [
+            {
+              "id": "prompt",
+              "name": "Prompt工程",
+              "icon": "💡",
+              "posts": ["prompt-engineering"]
+            },
+            {
+              "id": "rag",
+              "name": "RAG应用",
+              "icon": "📚",
+              "posts": ["rag-practice"]
+            }
+          ]
+        },
+        {
+          "id": "cv",
+          "name": "计算机视觉",
+          "icon": "👁️",
+          "posts": []
+        }
+      ]
+    },
+    {
+      "id": "life",
+      "name": "生活",
+      "icon": "🌿",
+      "description": "读书笔记、生活感悟、技术之外的故事",
+      "categories": [
+        {
+          "id": "reading",
+          "name": "读书笔记",
+          "icon": "📖",
+          "posts": ["clean-code-notes"]
+        },
+        {
+          "id": "thinking",
+          "name": "随想",
+          "icon": "💭",
+          "posts": []
+        }
+      ]
+    }
+  ],
+  "posts": {
+    "vite-guide": {
+      "title": "Vite 入门指南：下一代前端构建工具",
+      "topic": "tech",
+      "category": "frontend/vite",
+      "date": "2024-01-15",
+      "tags": ["Vite", "前端构建", "工具"],
+      "summary": "深入解析 Vite 的核心原理与使用方法，探讨它如何改变前端开发体验",
+      "content": "<p>Vite 是由 Vue 作者尤雨溪主导开发的下一代前端构建工具，它基于原生 ES Module 实现了极速的开发体验。</p><h2>为什么选择 Vite？</h2><p>传统的打包工具如 Webpack 在开发环境下需要将所有模块打包成 bundle，这导致启动速度随项目规模增长而下降。Vite 利用浏览器原生 ES Module 的能力，实现了真正的即时热更新。</p><h2>核心特性</h2><ul><li>极速启动：利用原生 ESM，无需等待打包</li><li>热更新快：基于 ESM 的 HMR，更新速度与文件数量无关</li><li>开箱即用：内置 TypeScript、JSX、CSS 预处理器支持</li><li>生产构建：基于 Rollup 的高效打包</li></ul><h2>快速上手</h2><pre><code>npm create vite@latest my-app -- --template vue\ncd my-app\nnpm install\nnpm run dev</code></pre><h2>总结</h2><p>Vite 代表了前端构建工具的发展方向，它的理念和实现都值得深入学习。</p>"
+    },
+    "vite-plugin-dev": {
+      "title": "手把手教你开发 Vite 插件",
+      "topic": "tech",
+      "category": "frontend/vite",
+      "date": "2024-01-20",
+      "tags": ["Vite", "插件开发", "Rollup"],
+      "summary": "从零开始了解 Vite 插件的开发流程与最佳实践",
+      "content": "<p>本文将带你深入了解 Vite 插件的开发流程。</p><h2>插件基础</h2><p>Vite 插件基于 Rollup 插件体系构建，同时扩展了 Vite 特有的钩子。</p><h2>开发步骤</h2><pre><code>export default function myPlugin() {\n  return {\n    name: 'my-plugin',\n    transform(code, id) {\n      // 转换逻辑\n    }\n  }\n}</code></pre><h2>实战技巧</h2><p>一个好的插件应该提供清晰的文档和错误提示。</p>"
+    },
+    "react-hooks-advanced": {
+      "title": "React Hooks 高级用法与最佳实践",
+      "topic": "tech",
+      "category": "frontend/react",
+      "date": "2024-01-10",
+      "tags": ["React", "Hooks", "状态管理"],
+      "summary": "深入探讨 React Hooks 的高级用法，包括自定义Hooks、性能优化和状态管理模式",
+      "content": "<p>Hooks 是 React 16.8 引入的重大更新，它让函数组件拥有了类组件的能力。</p><h2>useReducer 的高级用法</h2><p>对于复杂的状态逻辑，useReducer 比 useState 更加可控。</p><h2>自定义 Hooks</h2><p>自定义 Hook 是复用状态逻辑的主要方式。</p><pre><code>function useLocalStorage(key, initialValue) {\n  const [value, setValue] = useState(() => {\n    const stored = localStorage.getItem(key);\n    return stored ? JSON.parse(stored) : initialValue;\n  });\n  \n  useEffect(() => {\n    localStorage.setItem(key, JSON.stringify(value));\n  }, [key, value]);\n  \n  return [value, setValue];\n}</code></pre>"
+    },
+    "css-grid-layout": {
+      "title": "CSS Grid 布局完全指南",
+      "topic": "tech",
+      "category": "frontend/css",
+      "date": "2023-12-28",
+      "tags": ["CSS", "Grid", "布局"],
+      "summary": "掌握 CSS Grid 布局，从基础概念到实际应用",
+      "content": "<p>CSS Grid 是二维布局系统，可以同时处理行和列。</p><h2>基本概念</h2><ul><li>Grid Container: 网格容器</li><li>Grid Item: 网格项</li><li>Grid Line: 网格线</li><li>Grid Track: 网格轨道</li><li>Grid Cell: 网格单元格</li></ul>"
+    },
+    "node-api-design": {
+      "title": "Node.js RESTful API 设计最佳实践",
+      "topic": "tech",
+      "category": "backend/node",
+      "date": "2024-01-05",
+      "tags": ["Node.js", "RESTful", "API设计"],
+      "summary": "从零构建可维护、可扩展的 RESTful API",
+      "content": "<p>好的 API 设计是后端服务成功的关键。</p><h2>RESTful 原则</h2><p>使用标准 HTTP 方法：GET、POST、PUT、PATCH、DELETE。</p><h2>目录结构</h2><pre><code>src/\n├── routes/\n├── controllers/\n├── services/\n├── models/\n└── middleware/</code></pre>"
+    },
+    "fastapi-tutorial": {
+      "title": "FastAPI 快速入门与实战",
+      "topic": "tech",
+      "category": "backend/python",
+      "date": "2024-01-08",
+      "tags": ["Python", "FastAPI", "异步"],
+      "summary": "使用 FastAPI 构建高性能 Python API 服务",
+      "content": "<p>FastAPI 是一个现代化、快速的 Python Web 框架。</p><h2>特性</h2><ul><li>自动生成 API 文档</li><li>类型提示支持</li><li>异步支持</li><li>高性能</li></ul>"
+    },
+    "docker-best-practices": {
+      "title": "Docker 最佳实践与性能优化",
+      "topic": "tech",
+      "category": "devops/docker",
+      "date": "2024-01-12",
+      "tags": ["Docker", "DevOps", "容器化"],
+      "summary": "构建高效、安全的 Docker 镜像的最佳实践",
+      "content": "<p>Docker 已成为现代应用部署的标准。</p><h2>Dockerfile 优化</h2><ul><li>使用多阶段构建</li><li>合并 RUN 指令减少层数</li><li>合理使用 .dockerignore</li><li>使用轻量级基础镜像</li></ul>"
+    },
+    "prompt-engineering": {
+      "title": "Prompt 工程核心技巧",
+      "topic": "ai",
+      "category": "ai/llm/prompt",
+      "date": "2024-01-18",
+      "tags": ["LLM", "Prompt", "AI"],
+      "summary": "掌握与 LLM 高效沟通的技巧与策略",
+      "content": "<p>Prompt 工程是充分发挥 LLM 能力的关键。</p><h2>核心原则</h2><ol><li>清晰具体的指令</li><li>提供上下文和示例</li><li>分解复杂任务</li><li>迭代优化</li></ol><h2>常用技巧</h2><p>使用思维链（Chain of Thought）提示可以显著提高推理能力。</p>"
+    },
+    "rag-practice": {
+      "title": "RAG 系统实战：从原理到落地",
+      "topic": "ai",
+      "category": "ai/llm/rag",
+      "date": "2024-01-22",
+      "tags": ["RAG", "向量数据库", "LLM"],
+      "summary": "构建企业级 RAG 应用的核心技术与实践",
+      "content": "<p>RAG（检索增强生成）是当前最流行的 LLM 应用架构。</p><h2>核心组件</h2><ul><li>文档处理与分块</li><li>向量嵌入模型</li><li>向量数据库</li><li>检索策略</li><li>生成模型</li></ul>"
+    },
+    "clean-code-notes": {
+      "title": "《代码整洁之道》读书笔记",
+      "topic": "life",
+      "category": "life/reading",
+      "date": "2024-01-02",
+      "tags": ["读书笔记", "代码质量", "最佳实践"],
+      "summary": "整洁代码的原则与实践，程序员必读经典",
+      "content": "<p>Bob 大叔的经典之作，值得每个程序员反复研读。</p><h2>核心观点</h2><p>代码质量直接影响软件的可维护性和生命周期。</p><h2>关键原则</h2><ul><li>有意义的命名</li><li>函数要小，只做一件事</li><li>注释是无奈的之举</li><li>格式要一致</li></ul>"
+    }
+  }
+}

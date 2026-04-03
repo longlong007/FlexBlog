@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>X's Blog - 个人技术博客</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧑‍💻</text></svg>">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <a href="/" class="logo">
+        <span class="logo-icon">⌨️</span>
+        <span class="logo-text">X's Blog</span>
+      </a>
+      <nav class="nav">
+        <a href="/" class="nav-link active">首页</a>
+        <a href="#about" class="nav-link">关于</a>
+      </nav>
+      <button class="search-btn" id="searchBtn" aria-label="搜索">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+        <span class="search-hint">⌘K</span>
+      </button>
+      <button class="menu-btn" id="menuBtn" aria-label="菜单">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12h18M3 6h18M3 18h18"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Reading Progress -->
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <!-- Main Layout -->
+  <div class="main-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <select class="topic-select" id="topicSelect">
+          <option value="">选择主题</option>
+        </select>
+        <button class="sidebar-close" id="sidebarClose" aria-label="关闭">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="sidebar-content">
+        <nav class="category-tree" id="categoryTree">
+          <!-- Dynamically populated -->
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+      <!-- Home View -->
+      <section class="view view-home" id="homeView">
+        <div class="hero">
+          <h1 class="hero-title">你好，我是<span class="accent">小码</span></h1>
+          <p class="hero-subtitle">全栈开发 · AI爱好者 · 技术分享</p>
+        </div>
+        
+        <div class="topics-grid" id="topicsGrid">
+          <!-- Dynamically populated -->
+        </div>
+
+        <div class="recent-posts">
+          <h2 class="section-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 8v4l3 3"></path>
+              <circle cx="12" cy="12" r="10"></circle>
+            </svg>
+            最新文章
+          </h2>
+          <div class="posts-list" id="recentPosts">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Topic View -->
+      <section class="view view-topic hidden" id="topicView">
+        <div class="topic-header" id="topicHeader">
+          <!-- Dynamically populated -->
+        </div>
+        <div class="topic-categories" id="topicCategories">
+          <!-- Dynamically populated -->
+        </div>
+        <div class="posts-list" id="topicPosts">
+          <!-- Dynamically populated -->
+        </div>
+      </section>
+
+      <!-- Post View -->
+      <section class="view view-post hidden" id="postView">
+        <article class="article" id="articleContent">
+          <!-- Dynamically populated -->
+        </article>
+        <aside class="article-toc" id="articleToc">
+          <!-- Dynamically populated -->
+        </aside>
+      </section>
+
+      <!-- About View -->
+      <section class="view view-about hidden" id="aboutView">
+        <div class="about-card">
+          <div class="about-avatar">🧑‍💻</div>
+          <h1 class="about-name">小码</h1>
+          <p class="about-bio">资深全栈开发工程师，热爱技术，专注于前端工程化、后端架构与AI应用。</p>
+          <div class="about-links">
+            <a href="https://github.com" target="_blank" class="about-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="search-modal hidden" id="searchModal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="搜索文章标题或内容..." autocomplete="off">
+        <button class="search-close" id="searchClose">ESC</button>
+      </div>
+      <div class="search-results" id="searchResults">
+        <p class="search-hint-text">输入关键词开始搜索</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top -->
+  <button class="back-to-top hidden" id="backToTop" aria-label="返回顶部">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"></path>
+    </svg>
+  </button>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2024 X's Blog · 用 ❤️ 构建</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
