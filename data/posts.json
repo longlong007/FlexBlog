@@ -93,6 +93,12 @@
               "name": "RAG应用",
               "icon": "📚",
               "posts": ["rag-practice"]
+            },
+            {
+              "id": "openclaw",
+              "name": "OpenClaw",
+              "icon": "🦞",
+              "posts": ["openclaw-monetize"]
             }
           ]
         },
@@ -206,6 +212,15 @@
       "tags": ["RAG", "向量数据库", "LLM"],
       "summary": "构建企业级 RAG 应用的核心技术与实践",
       "content": "<p>RAG（检索增强生成）是当前最流行的 LLM 应用架构。</p><h2>核心组件</h2><ul><li>文档处理与分块</li><li>向量嵌入模型</li><li>向量数据库</li><li>检索策略</li><li>生成模型</li></ul>"
+    },
+    "openclaw-monetize": {
+      "title": "🔥 炸裂！扫描141个OpenClaw项目，我发现真正赚钱的竟然是这群人！",
+      "topic": "ai",
+      "category": "ai/llm/openclaw",
+      "date": "2026-04-03",
+      "tags": ["OpenClaw", "AI赚钱", "AI Agent", "创业"],
+      "summary": "GitHub狂揽25万星，超越React登顶全球第一！一个美国小哥靠卖AI员工给屋顶承包商，3个月狂赚180万美元。真正赚大钱的不是卖铲子的，而是深耕垂直行业的！",
+      "content": "<p>🦞 <strong>2026年最炸裂的AI项目是什么？答案只有一个：OpenClaw。</strong></p><p>72小时内斩获15万GitHub Stars，打破Linux历史纪录！各大云厂商排队推一键部署，一夜之间所有人都在讨论这只\"AI龙虾\"。</p><p>但问题来了——<strong>OpenClaw生态里，谁在真正赚大钱？</strong></p><p>我扫描了141个创业项目，结论颠覆认知👇</p><hr><h2>📊 先看一组震撼数据</h2><ul><li><strong>Roofclaw</strong>：历史总收入<mark>180万美元</mark> 💰</li><li><strong>Donely</strong>：历史总收入<mark>74.7万美元</mark></li><li><strong>ClawMart</strong>：最近30天收入<mark>5.4万美元</mark></li></ul><p>而那些帮人\"装龙虾\"的国内团队，淘宝累计下单超1000单的门店不止一家，数十人工程师团队单靠安装OpenClaw月入<strong>30-45万</strong>！</p><blockquote><p>安装服务价格已经成体系：远程50-100元，上门500元，企业一条龙服务开价1万，而且真有人买单！</p></blockquote><hr><h2>🤯 80%的人在挤同一条道</h2><p>看这141个项目，超过<strong>80%</strong>都在做同一件事：帮用户部署OpenClaw。</p><p>ClawHost、SetupClaw、EasyClaw...名字不同，卖的都是<strong>省去配Docker、跑Node.js、搞服务器的麻烦</strong>，收10-30美元/月的托管费。</p><p>国内更卷：</p><pre><code>北京：上门安装，一次1000元！\n上海：一次500元，包学会！\n深圳：一次500元，赠送API key！\n\n更有工程师承诺：上门部署，另赠做饭服务一次！</code></pre><p><strong>但这真的是最优路径吗？</strong></p><hr><h2>💎 真正的大佬：Roofclaw赚180万的秘密</h2><p><strong>Roofclaw的创始人Adam Sand</strong>，既不是AI圈的人，也不是什么技术大牛。他和妻子在美国做屋顶行业经营咨询，客户都是中小型屋顶承包商。</p><p>这些承包商最常见的生意：<strong>暴风雨后的险情修复</strong>。接一个单要应付现场评估、跟保险公司沟通、签合同、采材料、排施工、跟进客户、催尾款...</p><p>老板加几个销售疲于奔命。</p><p><strong>Adam的骚操作来了：</strong></p><ul><li>把OpenClaw打包成完整产品</li><li>一台预装好的Mac电脑</li><li>屋顶行业专属技能包</li><li>接入HubSpot CRM和工单系统</li><li>直接邮寄到客户桌上</li></ul><p><strong>插上电，AI员工就上班！</strong></p><p>定价<mark>5000美元/台</mark>，包含一对一培训和每周持续支持。已交付约360台，<strong>创收180万美元</strong>！</p><blockquote><p>这不是一次性收入！卖出的Mac依赖RBP整套流程服务和HubSpot合同。<strong>用户粘性在服务里，不在账单上。</strong></p></blockquote><hr><h2>🎯 OpenClaw赚钱的5种路径</h2><h3>1️⃣ 安装部署托管（红海）</h3><p>门槛低、竞争激烈，适合有服务器运维经验的人。要跑出来需要：</p><ul><li>早入场</li><li>差异化定价</li><li>持续服务能力</li></ul><h3>2️⃣ 垂直行业AI员工包（蓝海 ⭐推荐）</h3><p>找自己熟悉的传统行业，成为那个行业的<strong>\"AI员工供应商\"</strong>。</p><p>行业越传统，付费意愿越强，竞争越少！</p><ul><li><strong>BiClaw</strong>：给电商卖家，每天早上WhatsApp自动发Shopify收入和竞品动态</li><li><strong>PostClaw</strong>：同时推13个社交平台，根据受众自动调整语气</li><li><strong>SAM</strong>：专门给游艇运营做的</li></ul><h3>3️⃣ Token费用管理（被低估）</h3><p>OpenClaw用户最大的隐性成本：用<strong>昂贵大模型干简单活</strong>（加减乘除、搜索、替换）。</p><p>还有心跳机制每30分钟自动检查，什么输出都没有，每天烧20美元！</p><ul><li><strong>ZeroRules</strong>：本地拦截不需要大模型的任务，零Token消耗</li><li><strong>Clawwatcher</strong>：实时监控每个Token、每个动作、每一分钱的去向</li></ul><h3>4️⃣ 安全服务（几乎空白 ⚠️</h3><p>Koi Security发现ClawHub上<strong>341个恶意技能包</strong>藏着键盘记录器和后门！Snyk发现<strong>7.1%的技能包在泄露API密钥</strong>！</p><p>141个项目里，没有一个专门做安全的。这是大机会！</p><h3>5️⃣ 联盟营销与流量变现</h3><p>OpenClaw可以自动化完成：</p><ul><li>发布推广内容</li><li>更新推广页面</li><li>记录点击数据</li><li>自动发布产品测评</li></ul><hr><h2>🧠 一个永恒的规律</h2><p><strong>1849年加州淘金热，最后赚到钱的不是矿工，是卖牛仔裤的Levi Strauss。</strong></p><p>1990年代互联网热潮里，稳赚的是域名注册商和服务器托管。</p><p>2008年iPhone时代，钱在移动广告和应用商店优化里。</p><p><strong>2026年AI Agent时代：卖铲子也有高低之分。卖通用铲子竞争激烈，深耕某个垂直行业更有机会打开真正的生意！</strong></p><hr><h2>⚡ 总结</h2><p>OpenClaw生态正在爆发，真正赚钱的路径：</p><ol><li><strong>垂直行业AI员工包</strong>——溢价高、竞争少、粘性强</li><li><strong>安装部署托管</strong>——红海但稳定，需要差异化</li><li><strong>Token费用管理</strong>——被低估，用户天然需求</li><li><strong>安全服务</strong>——蓝海中的蓝海</li></ol><blockquote><p>🦞 <strong>不是AI不行，是你的行业不对。</strong> 找到你熟悉的传统行业，用OpenClaw武装它，这才是真正的机会！</p></blockquote><hr><h2>❓ 常见问题</h2><p><strong>Q：OpenClaw是免费的吗？</strong><br>开源项目本身免费，但部署运行需要服务器和API Key成本。</p><p><strong>Q：普通人能入场吗？</strong><br>当然！关键是找到你熟悉的垂直行业，不一定非要懂AI。</p><p><strong>Q：需要编程基础吗？</strong><br>安装托管需要技术背景；垂直行业包更需要行业理解而非编程。</p><p><strong>Q：现在入场还来得及吗？</strong><br>垂直行业服务、Token管理、安全方向都还是早期，绝对来得及！</p>"
     },
     "clean-code-notes": {
       "title": "《代码整洁之道》读书笔记",
