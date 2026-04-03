@@ -15,7 +15,7 @@
               "id": "vite",
               "name": "Vite",
               "icon": "⚡",
-              "posts": ["vite-guide", "vite-plugin-dev"]
+              "posts": ["vite-guide"]
             },
             {
               "id": "react",
@@ -139,16 +139,7 @@
       "date": "2024-01-15",
       "tags": ["Vite", "前端构建", "工具"],
       "summary": "深入解析 Vite 的核心原理与使用方法，探讨它如何改变前端开发体验",
-      "content": "<p>Vite 是由 Vue 作者尤雨溪主导开发的下一代前端构建工具，它基于原生 ES Module 实现了极速的开发体验。</p><h2>为什么选择 Vite？</h2><p>传统的打包工具如 Webpack 在开发环境下需要将所有模块打包成 bundle，这导致启动速度随项目规模增长而下降。Vite 利用浏览器原生 ES Module 的能力，实现了真正的即时热更新。</p><h2>核心特性</h2><ul><li>极速启动：利用原生 ESM，无需等待打包</li><li>热更新快：基于 ESM 的 HMR，更新速度与文件数量无关</li><li>开箱即用：内置 TypeScript、JSX、CSS 预处理器支持</li><li>生产构建：基于 Rollup 的高效打包</li></ul><h2>快速上手</h2><pre><code>npm create vite@latest my-app -- --template vue\ncd my-app\nnpm install\nnpm run dev</code></pre><h2>总结</h2><p>Vite 代表了前端构建工具的发展方向，它的理念和实现都值得深入学习。</p>"
-    },
-    "vite-plugin-dev": {
-      "title": "手把手教你开发 Vite 插件",
-      "topic": "tech",
-      "category": "frontend/vite",
-      "date": "2024-01-20",
-      "tags": ["Vite", "插件开发", "Rollup"],
-      "summary": "从零开始了解 Vite 插件的开发流程与最佳实践",
-      "content": "<p>本文将带你深入了解 Vite 插件的开发流程。</p><h2>插件基础</h2><p>Vite 插件基于 Rollup 插件体系构建，同时扩展了 Vite 特有的钩子。</p><h2>开发步骤</h2><pre><code>export default function myPlugin() {\n  return {\n    name: 'my-plugin',\n    transform(code, id) {\n      // 转换逻辑\n    }\n  }\n}</code></pre><h2>实战技巧</h2><p>一个好的插件应该提供清晰的文档和错误提示。</p>"
+      "file": "posts/tech/vite/vite-guide.md"
     },
     "react-hooks-advanced": {
       "title": "React Hooks 高级用法与最佳实践",
@@ -157,7 +148,7 @@
       "date": "2024-01-10",
       "tags": ["React", "Hooks", "状态管理"],
       "summary": "深入探讨 React Hooks 的高级用法，包括自定义Hooks、性能优化和状态管理模式",
-      "content": "<p>Hooks 是 React 16.8 引入的重大更新，它让函数组件拥有了类组件的能力。</p><h2>useReducer 的高级用法</h2><p>对于复杂的状态逻辑，useReducer 比 useState 更加可控。</p><h2>自定义 Hooks</h2><p>自定义 Hook 是复用状态逻辑的主要方式。</p><pre><code>function useLocalStorage(key, initialValue) {\n  const [value, setValue] = useState(() => {\n    const stored = localStorage.getItem(key);\n    return stored ? JSON.parse(stored) : initialValue;\n  });\n  \n  useEffect(() => {\n    localStorage.setItem(key, JSON.stringify(value));\n  }, [key, value]);\n  \n  return [value, setValue];\n}</code></pre>"
+      "file": "posts/tech/react/react-hooks-advanced.md"
     },
     "css-grid-layout": {
       "title": "CSS Grid 布局完全指南",
@@ -166,7 +157,7 @@
       "date": "2023-12-28",
       "tags": ["CSS", "Grid", "布局"],
       "summary": "掌握 CSS Grid 布局，从基础概念到实际应用",
-      "content": "<p>CSS Grid 是二维布局系统，可以同时处理行和列。</p><h2>基本概念</h2><ul><li>Grid Container: 网格容器</li><li>Grid Item: 网格项</li><li>Grid Line: 网格线</li><li>Grid Track: 网格轨道</li><li>Grid Cell: 网格单元格</li></ul>"
+      "file": null
     },
     "node-api-design": {
       "title": "Node.js RESTful API 设计最佳实践",
@@ -175,7 +166,7 @@
       "date": "2024-01-05",
       "tags": ["Node.js", "RESTful", "API设计"],
       "summary": "从零构建可维护、可扩展的 RESTful API",
-      "content": "<p>好的 API 设计是后端服务成功的关键。</p><h2>RESTful 原则</h2><p>使用标准 HTTP 方法：GET、POST、PUT、PATCH、DELETE。</p><h2>目录结构</h2><pre><code>src/\n├── routes/\n├── controllers/\n├── services/\n├── models/\n└── middleware/</code></pre>"
+      "file": null
     },
     "fastapi-tutorial": {
       "title": "FastAPI 快速入门与实战",
@@ -184,7 +175,7 @@
       "date": "2024-01-08",
       "tags": ["Python", "FastAPI", "异步"],
       "summary": "使用 FastAPI 构建高性能 Python API 服务",
-      "content": "<p>FastAPI 是一个现代化、快速的 Python Web 框架。</p><h2>特性</h2><ul><li>自动生成 API 文档</li><li>类型提示支持</li><li>异步支持</li><li>高性能</li></ul>"
+      "file": null
     },
     "docker-best-practices": {
       "title": "Docker 最佳实践与性能优化",
@@ -193,7 +184,7 @@
       "date": "2024-01-12",
       "tags": ["Docker", "DevOps", "容器化"],
       "summary": "构建高效、安全的 Docker 镜像的最佳实践",
-      "content": "<p>Docker 已成为现代应用部署的标准。</p><h2>Dockerfile 优化</h2><ul><li>使用多阶段构建</li><li>合并 RUN 指令减少层数</li><li>合理使用 .dockerignore</li><li>使用轻量级基础镜像</li></ul>"
+      "file": null
     },
     "prompt-engineering": {
       "title": "Prompt 工程核心技巧",
@@ -202,7 +193,7 @@
       "date": "2024-01-18",
       "tags": ["LLM", "Prompt", "AI"],
       "summary": "掌握与 LLM 高效沟通的技巧与策略",
-      "content": "<p>Prompt 工程是充分发挥 LLM 能力的关键。</p><h2>核心原则</h2><ol><li>清晰具体的指令</li><li>提供上下文和示例</li><li>分解复杂任务</li><li>迭代优化</li></ol><h2>常用技巧</h2><p>使用思维链（Chain of Thought）提示可以显著提高推理能力。</p>"
+      "file": "posts/ai/llm/prompt-engineering.md"
     },
     "rag-practice": {
       "title": "RAG 系统实战：从原理到落地",
@@ -211,7 +202,7 @@
       "date": "2024-01-22",
       "tags": ["RAG", "向量数据库", "LLM"],
       "summary": "构建企业级 RAG 应用的核心技术与实践",
-      "content": "<p>RAG（检索增强生成）是当前最流行的 LLM 应用架构。</p><h2>核心组件</h2><ul><li>文档处理与分块</li><li>向量嵌入模型</li><li>向量数据库</li><li>检索策略</li><li>生成模型</li></ul>"
+      "file": null
     },
     "openclaw-monetize": {
       "title": "🔥 炸裂！扫描141个OpenClaw项目，我发现真正赚钱的竟然是这群人！",
@@ -220,7 +211,7 @@
       "date": "2026-04-03",
       "tags": ["OpenClaw", "AI赚钱", "AI Agent", "创业"],
       "summary": "GitHub狂揽25万星，超越React登顶全球第一！一个美国小哥靠卖AI员工给屋顶承包商，3个月狂赚180万美元。真正赚大钱的不是卖铲子的，而是深耕垂直行业的！",
-      "content": "<p>🦞 <strong>2026年最炸裂的AI项目是什么？答案只有一个：OpenClaw。</strong></p><p>72小时内斩获15万GitHub Stars，打破Linux历史纪录！各大云厂商排队推一键部署，一夜之间所有人都在讨论这只\"AI龙虾\"。</p><p>但问题来了——<strong>OpenClaw生态里，谁在真正赚大钱？</strong></p><p>我扫描了141个创业项目，结论颠覆认知👇</p><hr><h2>📊 先看一组震撼数据</h2><ul><li><strong>Roofclaw</strong>：历史总收入<mark>180万美元</mark> 💰</li><li><strong>Donely</strong>：历史总收入<mark>74.7万美元</mark></li><li><strong>ClawMart</strong>：最近30天收入<mark>5.4万美元</mark></li></ul><p>而那些帮人\"装龙虾\"的国内团队，淘宝累计下单超1000单的门店不止一家，数十人工程师团队单靠安装OpenClaw月入<strong>30-45万</strong>！</p><blockquote><p>安装服务价格已经成体系：远程50-100元，上门500元，企业一条龙服务开价1万，而且真有人买单！</p></blockquote><hr><h2>🤯 80%的人在挤同一条道</h2><p>看这141个项目，超过<strong>80%</strong>都在做同一件事：帮用户部署OpenClaw。</p><p>ClawHost、SetupClaw、EasyClaw...名字不同，卖的都是<strong>省去配Docker、跑Node.js、搞服务器的麻烦</strong>，收10-30美元/月的托管费。</p><p>国内更卷：</p><pre><code>北京：上门安装，一次1000元！\n上海：一次500元，包学会！\n深圳：一次500元，赠送API key！\n\n更有工程师承诺：上门部署，另赠做饭服务一次！</code></pre><p><strong>但这真的是最优路径吗？</strong></p><hr><h2>💎 真正的大佬：Roofclaw赚180万的秘密</h2><p><strong>Roofclaw的创始人Adam Sand</strong>，既不是AI圈的人，也不是什么技术大牛。他和妻子在美国做屋顶行业经营咨询，客户都是中小型屋顶承包商。</p><p>这些承包商最常见的生意：<strong>暴风雨后的险情修复</strong>。接一个单要应付现场评估、跟保险公司沟通、签合同、采材料、排施工、跟进客户、催尾款...</p><p>老板加几个销售疲于奔命。</p><p><strong>Adam的骚操作来了：</strong></p><ul><li>把OpenClaw打包成完整产品</li><li>一台预装好的Mac电脑</li><li>屋顶行业专属技能包</li><li>接入HubSpot CRM和工单系统</li><li>直接邮寄到客户桌上</li></ul><p><strong>插上电，AI员工就上班！</strong></p><p>定价<mark>5000美元/台</mark>，包含一对一培训和每周持续支持。已交付约360台，<strong>创收180万美元</strong>！</p><blockquote><p>这不是一次性收入！卖出的Mac依赖RBP整套流程服务和HubSpot合同。<strong>用户粘性在服务里，不在账单上。</strong></p></blockquote><hr><h2>🎯 OpenClaw赚钱的5种路径</h2><h3>1️⃣ 安装部署托管（红海）</h3><p>门槛低、竞争激烈，适合有服务器运维经验的人。要跑出来需要：</p><ul><li>早入场</li><li>差异化定价</li><li>持续服务能力</li></ul><h3>2️⃣ 垂直行业AI员工包（蓝海 ⭐推荐）</h3><p>找自己熟悉的传统行业，成为那个行业的<strong>\"AI员工供应商\"</strong>。</p><p>行业越传统，付费意愿越强，竞争越少！</p><ul><li><strong>BiClaw</strong>：给电商卖家，每天早上WhatsApp自动发Shopify收入和竞品动态</li><li><strong>PostClaw</strong>：同时推13个社交平台，根据受众自动调整语气</li><li><strong>SAM</strong>：专门给游艇运营做的</li></ul><h3>3️⃣ Token费用管理（被低估）</h3><p>OpenClaw用户最大的隐性成本：用<strong>昂贵大模型干简单活</strong>（加减乘除、搜索、替换）。</p><p>还有心跳机制每30分钟自动检查，什么输出都没有，每天烧20美元！</p><ul><li><strong>ZeroRules</strong>：本地拦截不需要大模型的任务，零Token消耗</li><li><strong>Clawwatcher</strong>：实时监控每个Token、每个动作、每一分钱的去向</li></ul><h3>4️⃣ 安全服务（几乎空白 ⚠️</h3><p>Koi Security发现ClawHub上<strong>341个恶意技能包</strong>藏着键盘记录器和后门！Snyk发现<strong>7.1%的技能包在泄露API密钥</strong>！</p><p>141个项目里，没有一个专门做安全的。这是大机会！</p><h3>5️⃣ 联盟营销与流量变现</h3><p>OpenClaw可以自动化完成：</p><ul><li>发布推广内容</li><li>更新推广页面</li><li>记录点击数据</li><li>自动发布产品测评</li></ul><hr><h2>🧠 一个永恒的规律</h2><p><strong>1849年加州淘金热，最后赚到钱的不是矿工，是卖牛仔裤的Levi Strauss。</strong></p><p>1990年代互联网热潮里，稳赚的是域名注册商和服务器托管。</p><p>2008年iPhone时代，钱在移动广告和应用商店优化里。</p><p><strong>2026年AI Agent时代：卖铲子也有高低之分。卖通用铲子竞争激烈，深耕某个垂直行业更有机会打开真正的生意！</strong></p><hr><h2>⚡ 总结</h2><p>OpenClaw生态正在爆发，真正赚钱的路径：</p><ol><li><strong>垂直行业AI员工包</strong>——溢价高、竞争少、粘性强</li><li><strong>安装部署托管</strong>——红海但稳定，需要差异化</li><li><strong>Token费用管理</strong>——被低估，用户天然需求</li><li><strong>安全服务</strong>——蓝海中的蓝海</li></ol><blockquote><p>🦞 <strong>不是AI不行，是你的行业不对。</strong> 找到你熟悉的传统行业，用OpenClaw武装它，这才是真正的机会！</p></blockquote><hr><h2>❓ 常见问题</h2><p><strong>Q：OpenClaw是免费的吗？</strong><br>开源项目本身免费，但部署运行需要服务器和API Key成本。</p><p><strong>Q：普通人能入场吗？</strong><br>当然！关键是找到你熟悉的垂直行业，不一定非要懂AI。</p><p><strong>Q：需要编程基础吗？</strong><br>安装托管需要技术背景；垂直行业包更需要行业理解而非编程。</p><p><strong>Q：现在入场还来得及吗？</strong><br>垂直行业服务、Token管理、安全方向都还是早期，绝对来得及！</p>"
+      "file": "posts/ai/llm/openclaw-monetize.md"
     },
     "clean-code-notes": {
       "title": "《代码整洁之道》读书笔记",
@@ -229,7 +220,7 @@
       "date": "2024-01-02",
       "tags": ["读书笔记", "代码质量", "最佳实践"],
       "summary": "整洁代码的原则与实践，程序员必读经典",
-      "content": "<p>Bob 大叔的经典之作，值得每个程序员反复研读。</p><h2>核心观点</h2><p>代码质量直接影响软件的可维护性和生命周期。</p><h2>关键原则</h2><ul><li>有意义的命名</li><li>函数要小，只做一件事</li><li>注释是无奈的之举</li><li>格式要一致</li></ul>"
+      "file": null
     }
   }
 }

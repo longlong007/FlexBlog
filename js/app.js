@@ -9,7 +9,8 @@ const state = {
   currentTopic: null,
   currentPost: null,
   searchQuery: '',
-  selectedSearchIndex: 0
+  selectedSearchIndex: 0,
+  markdownCache: {}
 };
 
 // DOM Elements
@@ -39,6 +40,15 @@ const elements = {
   readingProgress: document.getElementById('readingProgress'),
   backToTop: document.getElementById('backToTop')
 };
+
+// Configure marked
+if (typeof marked !== 'undefined') {
+  marked.setOptions({
+    gfm: true,
+    breaks: true,
+    headerIds: true
+  });
+}
 
 // ============================================
 // Initialize
@@ -124,7 +134,7 @@ function setupEventListeners() {
     }
     // Escape to close
     if (e.key === 'Escape') {
-      if (elements.searchModal?.classList.contains('hidden') === false) {
+      if (!elements.searchModal?.classList.contains('hidden')) {
         closeSearch();
       }
     }
@@ -247,7 +257,7 @@ function renderTopicPosts(topicId) {
   attachPostCardListeners(elements.topicPosts);
 }
 
-function renderPost(postId) {
+async function renderPost(postId) {
   const post = state.data.posts[postId];
   if (!post) return renderHome();
   
@@ -256,6 +266,29 @@ function renderPost(postId) {
   state.currentPost = postId;
   
   showView('post');
+  
+  // Show loading state
+  elements.articleContent.innerHTML = '<div class="loading">加载中...</div>';
+  
+  // Fetch markdown content
+  let content = post.content || '';
+  if (post.file) {
+    try {
+      if (state.markdownCache[post.file]) {
+        content = state.markdownCache[post.file];
+      } else {
+        const response = await fetch(post.file);
+        content = await response.text();
+        state.markdownCache[post.file] = content;
+      }
+    } catch (error) {
+      console.error('Failed to fetch markdown:', error);
+      content = '<p>文章加载失败</p>';
+    }
+  }
+  
+  // Convert markdown to HTML
+  const htmlContent = typeof marked !== 'undefined' ? marked.parse(content) : content;
   
   // Article content
   const topic = state.data.topics.find(t => t.id === post.topic);
@@ -271,7 +304,7 @@ function renderPost(postId) {
       </div>
     </header>
     <div class="article-content">
-      ${post.content || `<p>${post.summary || '暂无内容'}</p>`}
+      ${htmlContent}
     </div>
   `;
   
@@ -287,7 +320,7 @@ function renderPost(postId) {
 
 function renderTOC() {
   const content = elements.articleContent.querySelector('.article-content');
-  const headings = content?.querySelectorAll('h2, h3') || [];
+  const headings = content?.querySelectorAll('h1, h2, h3, h4') || [];
   
   if (headings.length === 0) {
     elements.articleToc.innerHTML = '';
@@ -297,8 +330,9 @@ function renderTOC() {
   const tocItems = Array.from(headings).map((heading, index) => {
     const id = `heading-${index}`;
     heading.id = id;
+    const level = parseInt(heading.tagName.charAt(1)) - 1;
     return `
-      <a href="#${id}" class="toc-item level-${heading.tagName.toLowerCase()}">
+      <a href="#${id}" class="toc-item level-${level}">
         ${heading.textContent}
       </a>
     `;
@@ -445,7 +479,6 @@ function updateSidebarTree(topicId = null) {
 function renderCategoryItem(category, isActive, depth) {
   const hasChildren = category.children && category.children.length > 0;
   const posts = category.posts || [];
-  const topic = state.data.topics.find(t => t.categories?.includes(category) || t.categories?.some(c => c.id === category.id));
   
   let html = `
     <div class="category-item">

@@ -671,6 +671,13 @@ input {
   min-width: 0;
 }
 
+.loading {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+
 .article-header {
   margin-bottom: 40px;
   padding-bottom: 24px;
